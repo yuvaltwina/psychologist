@@ -1,0 +1,67 @@
+@import "../../../Style/Variables.scss";
+@mixin picAndTextDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+@mixin imageSize {
+  width: clamp(15rem, 40vw, 20rem);
+  border-radius: 20px;
+  border: 2px solid rgb(235 233 233);
+}
+@mixin textStyle {
+  color: $text-color;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 20px;
+  h1 {
+    margin: 0rem;
+  }
+  h3 {
+    margin-top: 0.8rem;
+  }
+  p {
+    margin: 20px 0;
+    line-height: 2;
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+.home-profile {
+  @include picAndTextDiv;
+}
+.home-profile-text {
+  @include textStyle;
+}
+.home-profile-image {
+  @include imageSize;
+}
+
+@media (max-width: 770px) {
+  .home-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .home-profile-text {
+    align-items: center;
+    p {
+      text-align: center;
+    }
+  }
+}

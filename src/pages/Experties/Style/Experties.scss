@@ -1,0 +1,93 @@
+@import "../../../Style/Variables.scss";
+@mixin picAndTextDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 5rem;
+}
+@mixin imageSize {
+  width: clamp(20rem, 40vw, 25rem);
+  border-radius: 20px;
+  border: 2px solid rgba(212, 211, 211);
+}
+@mixin textStyle {
+  color: $text-color;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  h1 {
+    margin: 0rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    margin-top: 0.8rem;
+  }
+  p {
+    margin: 20px 0;
+    line-height: 2;
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+}
+
+.experties {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+.experties-container {
+  display: flex;
+  gap: 35px;
+  width: 100%;
+  justify-content: center;
+}
+.exprties-headline {
+  color: $text-color;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 6rem;
+}
+.expertie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% / 6);
+
+  h6 {
+    font-size: 23px;
+    color: $text-color;
+    font-weight: 700;
+    margin-top: 2rem;
+
+    text-align: center;
+  }
+}
+.expertie-image {
+  width: clamp(8rem, 10.5vw, 15rem);
+  border-radius: 300px;
+  aspect-ratio: 1/1;
+  border: 2px solid rgba(208, 235, 255, 0.9);
+}
+
+@media (max-width: 1400px) {
+  .experties-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .expertie {
+    width: calc(100% / 3.5);
+  }
+}
+
+@media (max-width: 770px) {
+  .expertie {
+    width: calc(100% / 2.4);
+  }
+}

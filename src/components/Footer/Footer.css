@@ -1,0 +1,130 @@
+.footer {
+  background-color: white;
+  position: static;
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-loc-and-number {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.footer-locIcon {
+  font-size: 1.5rem;
+  color: #5193fb;
+  margin-bottom: 9px;
+}
+
+.footer-text {
+  color: #293560;
+  font-weight: 700;
+  text-align: center;
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
+.footer-number-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-loc-container {
+  display: flex;
+  flex-direction: row;
+  gap: 9px;
+  align-items: center;
+}
+
+.footer-numicon {
+  font-size: 1.4rem;
+  color: #5193fb;
+  margin-bottom: 6px;
+}
+
+.footer-middle-line {
+  color: #5193fb;
+  align-items: center;
+}
+
+.footer-contact-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-left: 50px;
+  position: static;
+}
+
+.footer-contact-icon-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-facebook-icon {
+  color: #5193fb;
+  font-size: 25px;
+}
+
+.footer-whatsapp-icon {
+  color: #00e676;
+  font-size: 25px;
+}
+
+.footer-liecence-computer {
+  color: #293560;
+  font-weight: 700;
+  text-align: center;
+  font-style: normal;
+  font-size: 1rem;
+  margin-right: 2rem;
+}
+
+.footer-liecence-phone {
+  display: none;
+}
+
+@media (max-width: 770px) {
+  .footer {
+    height: auto;
+    padding: 1.5rem 0rem;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    align-items: center;
+    position: static;
+  }
+  .footer-contact-icons {
+    position: static;
+    margin-left: 0px;
+  }
+  .footer-contact-icon-container {
+    width: 35px;
+    height: 35px;
+  }
+  .footer-liecence-computer {
+    display: none;
+    margin: 0;
+  }
+  .footer-liecence-phone {
+    display: block;
+    color: #293560;
+    font-weight: 700;
+    text-align: center;
+    font-style: normal;
+    font-size: 1rem;
+    margin: 0;
+  }
+}/*# sourceMappingURL=Footer.css.map */

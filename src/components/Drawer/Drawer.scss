@@ -1,0 +1,27 @@
+@import "../../Style/Variables.scss";
+.drawer-hamburger-button {
+  font-size: 2rem;
+}
+
+.drawer-list {
+}
+.drawer-button-continer {
+}
+
+.drawer-button {
+}
+.drawer-all-comp-contianer {
+  display: flex;
+}
+.drawer-button-text {
+  font-size: 22px !important;
+  text-align: center;
+}
+@media (min-width: 770px) {
+  .drawer-list {
+    display: none;
+  }
+  .drawer-container {
+    display: none;
+  }
+}

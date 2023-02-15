@@ -1,0 +1,137 @@
+@import "../../../Style/Variables.scss";
+
+.contact-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-color;
+  padding: 50px 0;
+  color: $text-color;
+  h1 {
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+  }
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  background-color: rgba($secondary-color, 0.35);
+  padding: 40px 70px;
+  border-radius: 20px;
+
+  p {
+    color: red;
+    margin: 0 0 0 0;
+    text-align: right;
+  }
+  h6 {
+    margin: 0 0 0 0;
+    text-align: right;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+}
+.contact-submit {
+  align-self: center;
+}
+.constact-icon-and-input {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 0.5rem;
+  background-color: white;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: 540;
+  padding: 0.4rem 0.6rem;
+  height: 2.5rem;
+  width: 18rem;
+  border: 3px solid rgb(128, 128, 128, 0.3);
+
+  &:has(input:focus) {
+    border: 2px solid $text-color;
+  }
+  &:focus {
+    transition: all 0.1s;
+    border: 2px solid rgb(63, 130, 230);
+    outline: none;
+  }
+}
+.contact-name {
+  font-size: 0.95rem;
+  font-weight: 540;
+  width: 100%;
+  height: 100%;
+  caret-color: gray;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+.contact-name-error {
+  outline: none;
+}
+.contact-phone {
+  font-size: 0.95rem;
+  font-weight: 540;
+  width: 100%;
+  height: 100%;
+  caret-color: gray;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+.contact-message {
+  resize: none;
+  font-size: 1.1rem;
+  font-weight: 540;
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
+  height: 9rem;
+  width: 18rem;
+  border: none;
+  &:focus {
+    outline: none;
+    border: 3px solid $text-color;
+  }
+}
+.contact-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($secondary-color, 0.7);
+  border-radius: 15px;
+  color: rgb(252, 252, 252);
+  height: 4rem;
+  width: 13rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $text-color;
+    transition: all 0.16s;
+  }
+}
+.input-error {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.3rem;
+  font-weight: 540;
+  margin-top: 0.5rem;
+  color: red;
+  font-size: 1.03rem;
+}
+
+.contact-error {
+  border: 1px solid red;
+}

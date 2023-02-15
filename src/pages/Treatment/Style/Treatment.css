@@ -1,0 +1,63 @@
+.Treatment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  font-size: 1.1rem;
+}
+
+.home-study {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 5rem;
+  flex-direction: row-reverse;
+}
+
+.home-study-text {
+  color: #293560;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.home-study-text h1 {
+  margin: 0rem;
+  margin-bottom: 1rem;
+}
+.home-study-text h3 {
+  margin-top: 0.8rem;
+}
+.home-study-text p {
+  margin: 20px 0;
+  line-height: 2;
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.home-study-image {
+  width: clamp(20rem, 40vw, 25rem);
+  border-radius: 20px;
+  border: 2px solid rgb(212, 211, 211);
+}
+
+@media (max-width: 770px) {
+  .home-study {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+  }
+  .home-study-text {
+    align-items: center;
+  }
+  .home-study-text p {
+    text-align: center;
+  }
+}/*# sourceMappingURL=Treatment.css.map */

@@ -1,0 +1,21 @@
+.drawer-hamburger-button {
+  font-size: 2rem;
+}
+
+.drawer-all-comp-contianer {
+  display: flex;
+}
+
+.drawer-button-text {
+  font-size: 22px !important;
+  text-align: center;
+}
+
+@media (min-width: 770px) {
+  .drawer-list {
+    display: none;
+  }
+  .drawer-container {
+    display: none;
+  }
+}/*# sourceMappingURL=Drawer.css.map */

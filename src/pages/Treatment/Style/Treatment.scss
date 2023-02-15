@@ -1,0 +1,70 @@
+@import "../../../Style/Variables.scss";
+@mixin picAndTextDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 5rem;
+}
+@mixin imageSize {
+  width: clamp(20rem, 40vw, 25rem);
+  border-radius: 20px;
+  border: 2px solid rgba(212, 211, 211);
+}
+@mixin textStyle {
+  color: $text-color;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h1 {
+    margin: 0rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    margin-top: 0.8rem;
+  }
+  p {
+    margin: 20px 0;
+    line-height: 2;
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+}
+.Treatment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  font-size: 1.1rem;
+}
+.home-study {
+  @include picAndTextDiv;
+  flex-direction: row-reverse;
+}
+.home-study-text {
+  @include textStyle;
+}
+.home-study-image {
+  @include imageSize;
+}
+@media (max-width: 770px) {
+  .home-study {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+  }
+  .home-study-text {
+    align-items: center;
+    p {
+      text-align: center;
+    }
+  }
+}

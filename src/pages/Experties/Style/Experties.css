@@ -1,0 +1,58 @@
+.experties {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.experties-container {
+  display: flex;
+  gap: 35px;
+  width: 100%;
+  justify-content: center;
+}
+
+.exprties-headline {
+  color: #293560;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 6rem;
+}
+
+.expertie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 16.6666666667%;
+}
+.expertie h6 {
+  font-size: 23px;
+  color: #293560;
+  font-weight: 700;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.expertie-image {
+  width: clamp(8rem, 10.5vw, 15rem);
+  border-radius: 300px;
+  aspect-ratio: 1/1;
+  border: 2px solid rgba(208, 235, 255, 0.9);
+}
+
+@media (max-width: 1400px) {
+  .experties-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .expertie {
+    width: 28.5714285714%;
+  }
+}
+@media (max-width: 770px) {
+  .expertie {
+    width: 41.6666666667%;
+  }
+}/*# sourceMappingURL=Experties.css.map */
