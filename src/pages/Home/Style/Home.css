@@ -3,15 +3,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px 0;
+  padding: 0px var(--inline-padding) 70px var(--inline-padding);
+  background-color: var(--background-color);
 }
 
 .home-profile {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 5rem;
+  width: 100%;
 }
 
 .home-profile-text {
@@ -19,27 +21,117 @@
   direction: rtl;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  text-align: center;
   font-size: 20px;
+  gap: 80px;
+  max-width: 1100px;
 }
-.home-profile-text h1 {
-  margin: 0rem;
+.home-profile-text .title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.home-profile-text h3 {
-  margin-top: 0.8rem;
+.home-profile-text .title-section .colored-title {
+  color: rgb(0, 136, 214);
 }
-.home-profile-text p {
-  margin: 20px 0;
+.home-profile-text .title-section h1 {
+  font-size: 60px;
+}
+.home-profile-text .title-section h3 {
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+.home-profile-text .paragraph-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.home-profile-text .paragraph-section p {
   line-height: 2;
   font-weight: 400;
   font-size: 1.1rem;
   letter-spacing: 1px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.contact {
+  margin: auto;
+  display: inline-block;
+  width: 11rem;
+  border-radius: 2em;
+  align-items: center;
+  background-color: #06f;
+  border: 2px solid #06f;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  fill: #000;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -0.8px;
+  line-height: 24px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  touch-action: manipulation;
+}
+.contact:hover {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
+
+.button-58:active {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
 }
 
 .home-profile-image {
-  width: clamp(15rem, 40vw, 20rem);
+  width: clamp(15rem, 40vw, 25rem);
   border-radius: 20px;
   border: 2px solid rgb(235, 233, 233);
+}
+
+.home-contact-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin: auto;
+}
+
+.home-contact-icon-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-facebook-icon {
+  color: rgb(38, 125, 255);
+  font-size: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+.home-facebook-icon:hover {
+  transform: scale(1.3);
+}
+
+.home-whatsapp-icon {
+  color: #03cd6b;
+  font-size: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+.home-whatsapp-icon:hover {
+  transform: scale(1.3);
 }
 
 @media (max-width: 770px) {
@@ -55,5 +147,8 @@
   }
   .home-profile-text p {
     text-align: center;
+  }
+  .contact {
+    margin-top: 3rem;
   }
 }/*# sourceMappingURL=Home.css.map */

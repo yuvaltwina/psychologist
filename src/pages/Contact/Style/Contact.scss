@@ -5,8 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $primary-color;
-  padding: 50px 0;
+  background-color: var(--background-color);
+  padding: 50px 0 0 0;
   color: $text-color;
   h1 {
     margin-top: 1rem;
@@ -20,6 +20,7 @@
   justify-content: center;
   gap: 1rem;
   background-color: rgba($secondary-color, 0.35);
+
   padding: 40px 70px;
   border-radius: 20px;
 
@@ -98,7 +99,7 @@
   border: none;
   &:focus {
     outline: none;
-    border: 3px solid $text-color;
+    border: 2px solid $text-color;
   }
 }
 .contact-submit {
@@ -134,4 +135,10 @@
 
 .contact-error {
   border: 1px solid red;
+  transition: all 0.1s;
+}
+@media (max-width: 500px) {
+  .contact-form {
+    padding: 40px 35px;
+  }
 }

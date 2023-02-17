@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  padding: 50px 0;
+  background-color: var(--background-color);
+  padding: 50px 0 0 0;
   color: #293560;
 }
 .contact-cover h1 {
@@ -101,7 +101,7 @@
 }
 .contact-message:focus {
   outline: none;
-  border: 3px solid #293560;
+  border: 2px solid #293560;
 }
 
 .contact-submit {
@@ -136,4 +136,11 @@
 
 .contact-error {
   border: 1px solid red;
+  transition: all 0.1s;
+}
+
+@media (max-width: 500px) {
+  .contact-form {
+    padding: 40px 35px;
+  }
 }/*# sourceMappingURL=Contact.css.map */

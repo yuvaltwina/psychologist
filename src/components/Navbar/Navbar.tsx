@@ -1,8 +1,10 @@
 import "./Navbar.css";
+
 import React, { FC, useEffect, useState } from "react";
+
 import { LINKS_INFO } from "../../utils/data/linksInfo";
-import TemporaryDrawer from "../Drawer/Drawer";
 import { RiArrowUpCircleFill } from "react-icons/ri";
+import TemporaryDrawer from "../Drawer/Drawer";
 import useIsVisible from "../../hooks/useIsVisible.jsx";
 
 const NAVLINKS = LINKS_INFO.navbar;
@@ -103,9 +105,7 @@ export const Navbar = ({ refList }) => {
           />
         )}
       </div>
-      {contactButton}
       {navLinks}
-      <h2 className="logo">פסיכולוג</h2>
       {scrollUpButton()}
     </nav>
   );

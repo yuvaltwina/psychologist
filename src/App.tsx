@@ -1,16 +1,17 @@
-import { useRef } from "react";
 import "./App.css";
+
+import { Contact } from "./pages/Contact/Contact";
+import { Experience } from "./pages/Experience/Experience";
+import { Experties } from "./pages/Experties/Experties";
+import { Footer } from "./components/Footer/Footer";
+import { Home } from "./pages/Home/Home";
+import { Lecture } from "./pages/Lecture/Lecture";
 // import { Routes, Route } from "react-router-dom";
 // import { NotFound } from "./pages/NotFound/NotFound";
 import { Navbar } from "./components/Navbar/Navbar";
-import { Footer } from "./components/Footer/Footer";
-import { Treatment } from "./pages/Treatment/Treatment";
-import { Home } from "./pages/Home/Home";
-import { Lecture } from "./pages/Lecture/Lecture";
-import { Experties } from "./pages/Experties/Experties";
-import { Experience } from "./pages/Experience/Experience";
-import { Contact } from "./pages/Contact/Contact";
 import { Toaster } from "react-hot-toast";
+import { Treatment } from "./pages/Treatment/Treatment";
+import { useRef } from "react";
 
 function App() {
   const homeRef = useRef(null);
@@ -29,13 +30,15 @@ function App() {
     <div className="app" ref={homeRef}>
       <Toaster />
       <Navbar refList={refList} />
-      <div className="home-and-treatment">
-        <Home />
+      {/* <div className="home-and-treatment"> */}
+      <Home refList={refList} />
+      {/* </div> */}
+      <div>
         <Treatment />
-      </div>
-      <div className="lecture-and-experties" ref={lectureRef}>
-        <Lecture />
-        <Experties />
+        <div className="lecture-and-experties" ref={lectureRef}>
+          <Lecture />
+          <Experties />
+        </div>
       </div>
       <div ref={exprienceRef}></div>
       <Experience />
