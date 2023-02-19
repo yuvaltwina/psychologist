@@ -1,8 +1,6 @@
 import React, { FC } from "react";
-import { Routes, Route, Link } from "react-router-dom";
 import sittingPeople from "../../utils/assets/sittingPeople.jpg";
 import "../Treatment/Style/Treatment.css";
-import road from "../../utils/assets/road.png";
 export const Treatment = () => {
   return (
     <div className="Treatment">

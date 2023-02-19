@@ -1,38 +1,4 @@
 @import "../../../Style/Variables.scss";
-@mixin picAndTextDiv {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  gap: 5rem;
-}
-@mixin imageSize {
-  width: clamp(20rem, 40vw, 25rem);
-  border-radius: 20px;
-  border: 2px solid rgba(212, 211, 211);
-}
-@mixin textStyle {
-  color: $text-color;
-  direction: rtl;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  h1 {
-    margin: 0rem;
-    margin-bottom: 1rem;
-  }
-  h3 {
-    margin-top: 0.8rem;
-  }
-  p {
-    margin: 20px 0;
-    line-height: 2;
-    font-weight: 400;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-  }
-}
 
 .experties {
   display: flex;
@@ -59,19 +25,19 @@
   justify-content: center;
   align-items: center;
   // border: red 1px solid;
-  // width: clamp(15rem, 25vw, 15rem);
+  // width: clamp(8rem, 23vw, 16rem);
+  // border: 1px solid red;
 
   h6 {
-    font-size: clamp(20px, 5vw, 25px);
+    font-size: clamp(20px, 25px);
     color: $text-color;
     font-weight: 700;
-    margin-top: 2rem;
-
+    margin-top: 2.2rem;
     text-align: center;
   }
 }
 .expertie-image {
-  width: clamp(9.2rem, 12vw, 15rem);
+  width: clamp(9.2rem, 11vw, 14rem);
   border-radius: 300px;
   aspect-ratio: 1/1;
   border: 2px solid rgba(208, 235, 255, 0.9);

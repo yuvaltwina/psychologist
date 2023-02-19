@@ -24,6 +24,7 @@
 }
 .lecture-text h1 {
   margin: 0rem;
+  font-size: 1.9rem;
 }
 .lecture-text h5 {
   margin-top: 1rem;
@@ -33,8 +34,8 @@
 .lecture-text p {
   margin: 20px 0;
   line-height: 2;
-  font-weight: 400;
-  font-size: 1.2rem;
+  font-weight: 549;
+  font-size: 1.25rem;
   letter-spacing: 1px;
 }
 

@@ -1,6 +1,5 @@
 import "../Lecture/Style/Lecture.css";
 import React, { FC } from "react";
-import { Routes, Route, Link } from "react-router-dom";
 import road from "../../utils/assets/road.png";
 
 export const Lecture = () => {

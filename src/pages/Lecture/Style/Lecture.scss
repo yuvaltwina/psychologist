@@ -1,19 +1,21 @@
 @import "../../../Style/Variables.scss";
 @import "../../../Style/Variables.scss";
-@mixin picAndTextDiv {
+
+.lecture {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px var(--inline-padding) 90px var(--inline-padding);
+}
+.lecture-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 5rem;
 }
-@mixin imageSize {
-  width: clamp(20rem, 40vw, 25rem);
-  height: clamp(20rem, 20vw, 22rem);
-  border-radius: 20px;
-  border: 2px solid rgba(208, 235, 255, 0.9);
-}
-@mixin textStyle {
+.lecture-text {
   color: $text-color;
   direction: rtl;
   display: flex;
@@ -23,6 +25,7 @@
 
   h1 {
     margin: 0rem;
+    font-size: 1.9rem;
   }
   h5 {
     margin-top: 1rem;
@@ -33,26 +36,16 @@
   p {
     margin: 20px 0;
     line-height: 2;
-    font-weight: 400;
-    font-size: 1.2rem;
+    font-weight: 549;
+    font-size: 1.25rem;
     letter-spacing: 1px;
   }
 }
-.lecture {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px var(--inline-padding) 90px var(--inline-padding);
-}
-.lecture-container {
-  @include picAndTextDiv;
-}
-.lecture-text {
-  @include textStyle;
-}
 .lecture-image {
-  @include imageSize;
+  width: clamp(20rem, 40vw, 25rem);
+  height: clamp(20rem, 20vw, 22rem);
+  border-radius: 20px;
+  border: 2px solid rgba(208, 235, 255, 0.9);
 }
 
 @media (max-width: 770px) {

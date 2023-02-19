@@ -95,10 +95,12 @@ export const Navbar = ({ refList }) => {
     );
   };
 
+  const phoneScreenSize = showModel <= 770;
+
   return (
     <nav className="navbar-cover" ref={navbar}>
       <div className="drawer-and-button-container">
-        {showModel <= 770 && (
+        {phoneScreenSize && (
           <TemporaryDrawer
             activeButton={activeButton}
             clickHandler={clickHandler}

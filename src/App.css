@@ -26,7 +26,7 @@ body {
   height: 95vh;
   display: flex;
   flex-direction: column;
-  gap: 150px;
+  /* gap: 150px; */
 }
 .lecture-and-experties {
   background-image: url("./utils/assets/twofacetwo.png");

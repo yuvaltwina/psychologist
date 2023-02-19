@@ -8,8 +8,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 4.5rem;
+  height: 4.5rem;
   padding-inline: var(--inline-padding);
+  // box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+  //   0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  margin-bottom: 2rem;
 }
 .logo {
   color: $text-color;
@@ -78,18 +81,20 @@
 
 @media (max-width: 770px) {
   .navbar-cover {
-    flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: flex-end;
   }
   .drawer-and-button-container {
     display: flex;
-    -webkit-tap-highlight-color: transparent;
-    position: absolute;
+    // position: absolute;
     background: none;
     border: none;
     padding: 0rem;
     margin: 0;
-    right: 2rem;
+    margin-top: 0.5rem;
+    // right: 2rem;
+    &:hover {
+      background-color: none;
+    }
   }
   .nav-list {
     display: none;

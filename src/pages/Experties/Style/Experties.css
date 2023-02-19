@@ -30,12 +30,12 @@
   font-size: clamp(20px, 5vw, 25px);
   color: #293560;
   font-weight: 700;
-  margin-top: 2rem;
+  margin-top: 2.2rem;
   text-align: center;
 }
 
 .expertie-image {
-  width: clamp(9.2rem, 12vw, 15rem);
+  width: clamp(9.2rem, 11vw, 14rem);
   border-radius: 300px;
   aspect-ratio: 1/1;
   border: 2px solid rgba(208, 235, 255, 0.9);

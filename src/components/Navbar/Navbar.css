@@ -7,8 +7,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 4.5rem;
+  height: 4.5rem;
   padding-inline: var(--inline-padding);
+  margin-bottom: 2rem;
 }
 
 .logo {
@@ -80,18 +81,18 @@
 
 @media (max-width: 770px) {
   .navbar-cover {
-    flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: flex-end;
   }
   .drawer-and-button-container {
     display: flex;
-    -webkit-tap-highlight-color: transparent;
-    position: absolute;
     background: none;
     border: none;
     padding: 0rem;
     margin: 0;
-    right: 2rem;
+    margin-top: 0.5rem;
+  }
+  .drawer-and-button-container:hover {
+    background-color: none;
   }
   .nav-list {
     display: none;

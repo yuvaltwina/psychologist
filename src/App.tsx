@@ -6,14 +6,13 @@ import { Experties } from "./pages/Experties/Experties";
 import { Footer } from "./components/Footer/Footer";
 import { Home } from "./pages/Home/Home";
 import { Lecture } from "./pages/Lecture/Lecture";
-// import { Routes, Route } from "react-router-dom";
-// import { NotFound } from "./pages/NotFound/NotFound";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Toaster } from "react-hot-toast";
 import { Treatment } from "./pages/Treatment/Treatment";
 import { useRef } from "react";
 
 function App() {
+  document.title = "פסיכולוג שחר ברורמן ";
   const homeRef = useRef(null);
   const lectureRef = useRef(null);
   const exprienceRef = useRef(null);
