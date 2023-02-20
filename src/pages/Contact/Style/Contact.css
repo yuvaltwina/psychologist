@@ -96,7 +96,7 @@
 .all-inputs-continer {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.8rem;
   align-items: flex-end;
 }
 
@@ -212,7 +212,6 @@
     align-items: center;
   }
   .all-inputs-continer {
-    gap: 3rem;
     align-items: center;
   }
   .contact-info-container {
