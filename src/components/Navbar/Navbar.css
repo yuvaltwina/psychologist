@@ -45,14 +45,14 @@
 }
 .nav-link:hover {
   transition: all 0.1s;
-  color: #5193fb;
+  color: var(--special-color);
 }
 
 .nav-selcted {
-  color: #5193fb !important;
+  color: var(--special-color) !important;
 }
 .nav-selcted:hover {
-  color: #5193fb;
+  color: var(--special-color);
 }
 
 .drawer-and-button-container {

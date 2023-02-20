@@ -32,7 +32,7 @@
   gap: 10px;
 }
 .home-profile-text .title-section .colored-title {
-  color: rgb(0, 136, 214);
+  color: var(--special-color);
 }
 .home-profile-text .title-section h1 {
   font-size: 60px;

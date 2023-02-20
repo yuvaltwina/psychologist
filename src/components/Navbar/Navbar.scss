@@ -45,14 +45,14 @@
   cursor: pointer;
   &:hover {
     transition: all 0.1s;
-    color: $secondary-color;
+    color: var(--special-color);
   }
 }
 .nav-selcted {
-  color: $secondary-color !important;
+  color: var(--special-color) !important;
 
   &:hover {
-    color: $secondary-color;
+    color: var(--special-color);
   }
 }
 
