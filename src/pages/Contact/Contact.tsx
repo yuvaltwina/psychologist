@@ -10,11 +10,16 @@ import { MdOutlinePhoneIphone } from "react-icons/md";
 import { AiOutlineMail } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 import { GiEarthAmerica } from "react-icons/gi";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import InputAdornment from "@mui/material/InputAdornment";
+import Textarea from "@mui/joy/Textarea";
 const API_KEY_PUBLIC = import.meta.env.VITE_API_KEY_PUBLIC;
 const API_TAMPLATE_ID = import.meta.env.VITE_API_TAMPLATE_ID;
 const API_SERVICE_ID = import.meta.env.VITE_API_SERVICE_ID;
 const NAME_FIELD = "fullName";
 const PHONE_FIELD = "phoneNumber";
+const SUBJECT_FIELD = "subject";
 const MESSAGE = "message";
 const MAIL_SUCSESS_MESSAGE = "! המייל נשלח בהצלחה";
 const MAIL_FAILED_MESSAGE = "שליחה נכשלה";
@@ -24,8 +29,9 @@ const NAME_MINLENGTH_MESSAGE = "שדה זה לא ארוך מ20 תווים";
 const NAME_MAXLENGTH_MESSAGE = "שדה זה צריך להכיל לפחות 4 תווים";
 const PHONE_LENGTH_MESSAGE = "שדה זה צריך להיות באורך 10 תווים";
 const PHONE_CHAR_KIND_MESSAGE = "שדה זה מכיל רק ספרות";
+const SUBJECT_MAXLENGTH_MESSAGE = "שדה זה לא ארוך מ50 תווים";
 const MESSAGE_MIN_LENGTH_MESSAGE = "שדה זה צריך להכיל לפחות 15 תווים";
-const MESSAGE_MAX_LENGTH_MESSAGE = "שדה זה לא ארוך מ100 תווים";
+const MESSAGE_MAX_LENGTH_MESSAGE = "שדה זה לא ארוך מ500 תווים";
 const REQUIRED_FIELD_MESSAGE = "שדה חובה";
 const REGEX_ONLY_LETTERS = /^[\u0590-\u05FFa-zA-Z\s]+$/;
 const REGEX_ONLY_NUMBERS = /^\d+$/;
@@ -57,6 +63,7 @@ export const Contact = () => {
     initialValues: {
       fullName: "",
       phoneNumber: "",
+      subject: "",
       message: "",
     },
     validationSchema: yup.object({
@@ -71,9 +78,15 @@ export const Contact = () => {
         .matches(REGEX_ONLY_NUMBERS, PHONE_CHAR_KIND_MESSAGE)
         .length(10, PHONE_LENGTH_MESSAGE)
         .required(REQUIRED_FIELD_MESSAGE),
+      subject: yup
+        .string()
+        .matches(REGEX_ONLY_LETTERS, NAME_CHAR_KIND_MESSAGE)
+        .min(4, NAME_MINLENGTH_MESSAGE)
+        .max(50, SUBJECT_MAXLENGTH_MESSAGE)
+        .required(REQUIRED_FIELD_MESSAGE),
       message: yup
         .string()
-        .max(100, MESSAGE_MAX_LENGTH_MESSAGE)
+        .max(500, MESSAGE_MAX_LENGTH_MESSAGE)
         .min(15, MESSAGE_MIN_LENGTH_MESSAGE)
         .required(REQUIRED_FIELD_MESSAGE),
     }),
@@ -113,7 +126,7 @@ export const Contact = () => {
     const contactInfoItems = CONTACT_INFO_ITEMS_LIST.map(
       ({ icon, header, pargraph }) => {
         return (
-          <span className="contact-info-item">
+          <span key={header} className="contact-info-item">
             <div className="contact-info-item-text">
               <h3>{header}</h3>
               <p>{pargraph}</p>
@@ -128,7 +141,7 @@ export const Contact = () => {
 
   return (
     <div className="contact-cover">
-      <h1>ליצירת קשר וקביעת פגישה</h1>
+      {/* <h1>ליצירת קשר וקביעת פגישה</h1> */}
       <div className="contact-boxes-container">
         <form
           autoComplete="off"
@@ -137,76 +150,115 @@ export const Contact = () => {
             sendEmail(e);
           }}
         >
-          <div className="contact-input-container">
-            <h6>שם מלא</h6>
-            <div
-              className={`constact-icon-and-input ${
-                formik.touched.fullName &&
-                formik.errors.fullName &&
-                "contact-error"
-              }`}
-            >
-              <BsPerson />
-              <input
-                className={`contact-name`}
+          <h1>ליצירת קשר</h1>
+          <div className="all-inputs-continer">
+            <div className="contact-name-and-phone-inputs">
+              <div className="contact-input-container">
+                <TextField
+                  // label="With normal TextField"
+                  type="text"
+                  id={NAME_FIELD}
+                  name={NAME_FIELD}
+                  dir="rtl"
+                  placeholder=" שם מלא"
+                  onBlur={formik.handleBlur}
+                  value={formik.values.fullName}
+                  onChange={formik.handleChange}
+                  error={!!(formik.touched.fullName && formik.errors.fullName)}
+                  sx={{
+                    width: "100%",
+                  }}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <BsPerson />
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+                {inputErrorMessage(NAME_FIELD)}
+              </div>
+              <div className="contact-input-container">
+                <TextField
+                  // label="With normal TextField"
+                  type="tel"
+                  id={PHONE_FIELD}
+                  name={PHONE_FIELD}
+                  dir="rtl"
+                  onBlur={formik.handleBlur}
+                  value={formik.values.phoneNumber}
+                  onChange={formik.handleChange}
+                  placeholder="מספר טלפון"
+                  error={
+                    !!(formik.touched.phoneNumber && formik.errors.phoneNumber)
+                  }
+                  sx={{
+                    width: "100%",
+                  }}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <MdOutlinePhoneIphone />
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+                {inputErrorMessage(PHONE_FIELD)}
+              </div>
+            </div>
+            <div className="contact-input-container">
+              <TextField
+                // label="With normal TextField"
                 type="text"
-                id={NAME_FIELD}
-                name={NAME_FIELD}
-                placeholder=""
+                id={SUBJECT_FIELD}
+                name={SUBJECT_FIELD}
                 dir="rtl"
+                placeholder="נושא"
                 onBlur={formik.handleBlur}
-                value={formik.values.fullName}
+                value={formik.values.subject}
                 onChange={formik.handleChange}
+                error={!!(formik.touched.subject && formik.errors.subject)}
+                className={"subject-input"}
+                sx={{
+                  width: "100%",
+                }}
+                // sx={{ m: 1, width: "100%" }}
+                // InputProps={{
+                //   startAdornment: (
+                //     <InputAdornment position="start">
+                //       <BsPerson />
+                //     </InputAdornment>
+                //   ),
+                // }}
               />
+              {inputErrorMessage(SUBJECT_FIELD)}
             </div>
-            {inputErrorMessage(NAME_FIELD)}
-          </div>
-          <div className="contact-input-container">
-            <h6>מספר טלפון</h6>
-            <div
-              className={`constact-icon-and-input ${
-                formik.touched.phoneNumber &&
-                formik.errors.phoneNumber &&
-                "contact-error"
-              }`}
-            >
-              <MdOutlinePhoneIphone />
-              <input
-                className={`contact-phone`}
-                type="tel"
-                id={PHONE_FIELD}
-                name={PHONE_FIELD}
-                placeholder=""
+            <div className="contact-text-container">
+              <Textarea
+                id={MESSAGE}
+                name={MESSAGE}
                 dir="rtl"
+                // rows={4}
+                minRows={5}
+                maxRows={20}
+                placeholder={MESSAGE_PLACEHOLDER}
                 onBlur={formik.handleBlur}
-                value={formik.values.phoneNumber}
+                value={formik.values.message}
                 onChange={formik.handleChange}
+                error={!!(formik.touched.message && formik.errors.message)}
+                sx={{
+                  width: "100%",
+                  "& .MuiInputBase-root": {
+                    height: "100%",
+                  },
+                }}
               />
+              {inputErrorMessage(MESSAGE)}
             </div>
-            {inputErrorMessage(PHONE_FIELD)}
+            <button className="contact-submit" type="submit">
+              שליחת הודעה
+            </button>
           </div>
-
-          <div className="contact-text-container">
-            <h6>הודעה</h6>
-            <textarea
-              className={`contact-message ${
-                formik.touched.message &&
-                formik.errors.message &&
-                "contact-error"
-              }`}
-              id={MESSAGE}
-              name={MESSAGE}
-              placeholder={MESSAGE_PLACEHOLDER}
-              dir="rtl"
-              onBlur={formik.handleBlur}
-              value={formik.values.message}
-              onChange={formik.handleChange}
-            />
-            {inputErrorMessage(MESSAGE)}
-          </div>
-          <button className="contact-submit" type="submit">
-            שליחה
-          </button>
         </form>
 
         <div className="contact-info-container">

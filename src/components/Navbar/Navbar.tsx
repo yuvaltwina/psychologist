@@ -13,10 +13,10 @@ type linksInfo = {
 };
 const SCROLL_BEHAVIOR = { behavior: "smooth" };
 
-const HOME = "בית";
-const LECTURES = "הרצאות";
-const EDUCATION = "השכלה";
-const CONTACT = "צור קשר";
+const HOME: string = "בית";
+const LECTURES: string = "הרצאות";
+const EDUCATION: string = "השכלה";
+const CONTACT: string = "צור קשר";
 
 export const Navbar = ({ refList }) => {
   const { home, lecture, exprience, contact, navbar } = refList;
@@ -39,7 +39,7 @@ export const Navbar = ({ refList }) => {
     };
   }, []);
 
-  const clickHandler = (title) => {
+  const clickHandler = (title: string) => {
     setActiveButton(title);
     const { [title]: selectedRef } = LINKS;
     selectedRef.current.scrollIntoView(SCROLL_BEHAVIOR);

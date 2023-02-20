@@ -40,6 +40,11 @@
     font-size: 1.25rem;
     letter-spacing: 1px;
   }
+  span {
+    color: var(--special-color);
+    font-weight: 550;
+    font-size: 1.4rem;
+  }
 }
 .lecture-image {
   width: clamp(20rem, 40vw, 25rem);
@@ -63,7 +68,8 @@
       text-align: center;
     }
     p {
-      text-align: center;
+      line-height: 1.7;
+      // text-align: center;
     }
   }
 }

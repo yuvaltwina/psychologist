@@ -18,6 +18,7 @@
   flex-direction: row;
   align-items: center;
   line-height: 1.8;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .contact-info-container {
@@ -75,11 +76,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
   gap: 1rem;
   background-color: white;
   height: 650px;
-  padding: 40px 70px;
+  padding: 20px 50px;
 }
 .contact-form p {
   color: red;
@@ -93,31 +93,28 @@
   margin-bottom: 0.4rem;
 }
 
-.contact-submit {
-  align-self: center;
+.all-inputs-continer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-end;
 }
 
-.constact-icon-and-input {
+.contact-name-and-phone-inputs {
   display: flex;
-  align-items: center;
   flex-direction: row-reverse;
-  gap: 0.5rem;
-  background-color: white;
-  border-radius: 6px;
-  font-size: 1.2rem;
-  font-weight: 540;
-  padding: 0.4rem 0.6rem;
-  height: 2.5rem;
-  width: 18rem;
-  border: 3px solid rgba(128, 128, 128, 0.3);
+  width: 100%;
+  gap: 1rem;
 }
-.constact-icon-and-input:has(input:focus) {
-  border: 2px solid #293560;
+
+.contact-text-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
-.constact-icon-and-input:focus {
-  transition: all 0.1s;
-  border: 2px solid rgb(63, 130, 230);
-  outline: none;
+
+.contact-input-container {
+  width: 100%;
 }
 
 .contact-name {
@@ -163,32 +160,44 @@
   border: 2px solid #293560;
 }
 
+.css-1j3a5ol-JoyTextarea-root {
+  border: 1px solid #c4c4c4 !important;
+}
+.css-1j3a5ol-JoyTextarea-root:hover {
+  border: 1px solid black !important;
+}
+
+.contact-text-input {
+  box-shadow: none;
+}
+
 .contact-submit {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(81, 147, 251, 0.7);
-  border-radius: 15px;
-  color: rgb(252, 252, 252);
-  height: 4rem;
-  width: 13rem;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  border: none;
+  color: white;
+  background-color: var(--special-color);
+  width: 125px;
+  height: 45px;
+  padding: 16px 12px;
+  border: transparent;
+  border-radius: 5px;
+  font-weight: 549;
+  font-size: 0.93rem;
 }
 .contact-submit:hover {
   cursor: pointer;
-  background-color: #293560;
-  transition: all 0.16s;
+  background-color: #0367ca;
+  transition: all 0.3s;
 }
 
 .input-error {
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
   gap: 0.3rem;
   font-weight: 540;
-  margin-top: 0.5rem;
+  margin-top: 0rem;
   color: red;
   font-size: 1.03rem;
 }
@@ -198,8 +207,15 @@
   transition: all 0.1s;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 770px) {
   .contact-form {
-    padding: 40px 35px;
+    align-items: center;
+  }
+  .all-inputs-continer {
+    gap: 3rem;
+    align-items: center;
+  }
+  .contact-info-container {
+    display: none;
   }
 }/*# sourceMappingURL=Contact.css.map */

@@ -7,12 +7,12 @@
   --text-secondary: #788097;
   --special-color: #1089ff;
 }
-
+/* rgb(238, 237, 231) */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Quicksand;
+  font-family: Helvetica;
 }
 html {
   background-color: var(--background-color);

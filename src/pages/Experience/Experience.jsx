@@ -18,12 +18,7 @@ const experienceList = [
 
 export const Experience = () => {
   const displayExpirience = experienceList.map(({ pargrah }, index) => {
-    return (
-      <Card key={pargrah} words={pargrah} index={index}></Card>
-      // <li key={pargrah} className="exprience-list-item">
-      //   <p dangerouslySetInnerHTML={{ __html: pargrah }}></p>
-      // </li>
-    );
+    return <Card key={pargrah} words={pargrah} index={index}></Card>;
   });
   return (
     <div className="experience-cover">
