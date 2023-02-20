@@ -10,7 +10,6 @@ import { MdOutlinePhoneIphone } from "react-icons/md";
 import { AiOutlineMail } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 import { GiEarthAmerica } from "react-icons/gi";
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import Textarea from "@mui/joy/Textarea";
@@ -235,6 +234,7 @@ export const Contact = () => {
             </div>
             <div className="contact-text-container">
               <Textarea
+                className={"contact-text-input"}
                 id={MESSAGE}
                 name={MESSAGE}
                 dir="rtl"
