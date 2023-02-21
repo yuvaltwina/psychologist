@@ -2,7 +2,6 @@ import React, { FC, useState } from "react";
 import "./Style/Contact.css";
 import emailjs from "emailjs-com";
 import { toast } from "react-hot-toast";
-import * as yup from "yup";
 import { useFormik } from "formik";
 import { MdReportGmailerrorred } from "react-icons/md";
 import { BsPerson } from "react-icons/bs";
@@ -13,6 +12,7 @@ import { GiEarthAmerica } from "react-icons/gi";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import Textarea from "@mui/joy/Textarea";
+import { contactValidation } from "../../validation/contactValidation";
 const API_KEY_PUBLIC = import.meta.env.VITE_API_KEY_PUBLIC;
 const API_TAMPLATE_ID = import.meta.env.VITE_API_TAMPLATE_ID;
 const API_SERVICE_ID = import.meta.env.VITE_API_SERVICE_ID;
@@ -23,17 +23,6 @@ const MESSAGE = "message";
 const MAIL_SUCSESS_MESSAGE = "! המייל נשלח בהצלחה";
 const MAIL_FAILED_MESSAGE = "שליחה נכשלה";
 const MESSAGE_PLACEHOLDER = "כאן ניתן למלא את פרטי ההודעה...";
-const NAME_CHAR_KIND_MESSAGE = "שדה זה מכיל רק אותיות";
-const NAME_MINLENGTH_MESSAGE = "שדה זה לא ארוך מ20 תווים";
-const NAME_MAXLENGTH_MESSAGE = "שדה זה צריך להכיל לפחות 4 תווים";
-const PHONE_LENGTH_MESSAGE = "שדה זה צריך להיות באורך 10 תווים";
-const PHONE_CHAR_KIND_MESSAGE = "שדה זה מכיל רק ספרות";
-const SUBJECT_MAXLENGTH_MESSAGE = "שדה זה לא ארוך מ50 תווים";
-const MESSAGE_MIN_LENGTH_MESSAGE = "שדה זה צריך להכיל לפחות 15 תווים";
-const MESSAGE_MAX_LENGTH_MESSAGE = "שדה זה לא ארוך מ500 תווים";
-const REQUIRED_FIELD_MESSAGE = "שדה חובה";
-const REGEX_ONLY_LETTERS = /^[\u0590-\u05FFa-zA-Z\s]+$/;
-const REGEX_ONLY_NUMBERS = /^\d+$/;
 const CONTACT_INFO_ITEMS_LIST = [
   {
     icon: <MdLocationOn className="contact-info-item-icon" />,
@@ -65,30 +54,7 @@ export const Contact = () => {
       subject: "",
       message: "",
     },
-    validationSchema: yup.object({
-      fullName: yup
-        .string()
-        .matches(REGEX_ONLY_LETTERS, NAME_CHAR_KIND_MESSAGE)
-        .min(4, NAME_MINLENGTH_MESSAGE)
-        .max(20, NAME_MAXLENGTH_MESSAGE)
-        .required(REQUIRED_FIELD_MESSAGE),
-      phoneNumber: yup
-        .string()
-        .matches(REGEX_ONLY_NUMBERS, PHONE_CHAR_KIND_MESSAGE)
-        .length(10, PHONE_LENGTH_MESSAGE)
-        .required(REQUIRED_FIELD_MESSAGE),
-      subject: yup
-        .string()
-        .matches(REGEX_ONLY_LETTERS, NAME_CHAR_KIND_MESSAGE)
-        .min(4, NAME_MINLENGTH_MESSAGE)
-        .max(50, SUBJECT_MAXLENGTH_MESSAGE)
-        .required(REQUIRED_FIELD_MESSAGE),
-      message: yup
-        .string()
-        .max(500, MESSAGE_MAX_LENGTH_MESSAGE)
-        .min(15, MESSAGE_MIN_LENGTH_MESSAGE)
-        .required(REQUIRED_FIELD_MESSAGE),
-    }),
+    validationSchema: contactValidation,
     onSubmit: (values, { resetForm }) => {
       resetForm();
     },
@@ -140,7 +106,6 @@ export const Contact = () => {
 
   return (
     <div className="contact-cover">
-      {/* <h1>ליצירת קשר וקביעת פגישה</h1> */}
       <div className="contact-boxes-container">
         <form
           autoComplete="off"
@@ -154,7 +119,6 @@ export const Contact = () => {
             <div className="contact-name-and-phone-inputs">
               <div className="contact-input-container">
                 <TextField
-                  // label="With normal TextField"
                   type="text"
                   id={NAME_FIELD}
                   name={NAME_FIELD}
@@ -179,7 +143,6 @@ export const Contact = () => {
               </div>
               <div className="contact-input-container">
                 <TextField
-                  // label="With normal TextField"
                   type="tel"
                   id={PHONE_FIELD}
                   name={PHONE_FIELD}
@@ -207,7 +170,6 @@ export const Contact = () => {
             </div>
             <div className="contact-input-container">
               <TextField
-                // label="With normal TextField"
                 type="text"
                 id={SUBJECT_FIELD}
                 name={SUBJECT_FIELD}
@@ -221,24 +183,20 @@ export const Contact = () => {
                 sx={{
                   width: "100%",
                 }}
-                // sx={{ m: 1, width: "100%" }}
-                // InputProps={{
-                //   startAdornment: (
-                //     <InputAdornment position="start">
-                //       <BsPerson />
-                //     </InputAdornment>
-                //   ),
-                // }}
               />
               {inputErrorMessage(SUBJECT_FIELD)}
             </div>
-            <div className="contact-text-container">
+            <div id="my-form" className="contact-text-container">
               <Textarea
-                className={"contact-text-input"}
+                variant="outlined"
+                className={`contact-text-input ${
+                  !!(formik.touched.message && formik.errors.message)
+                    ? "text-input-error"
+                    : ""
+                }`}
                 id={MESSAGE}
                 name={MESSAGE}
                 dir="rtl"
-                // rows={4}
                 minRows={5}
                 maxRows={20}
                 placeholder={MESSAGE_PLACEHOLDER}

@@ -26,7 +26,7 @@
   margin: 0rem;
   font-size: 1.9rem;
 }
-.lecture-text h5 {
+.lecture-text h3 {
   margin-top: 1rem;
   margin-bottom: 0.9rem;
   font-size: 21px;
@@ -38,17 +38,19 @@
   font-size: 1.25rem;
   letter-spacing: 1px;
 }
-.lecture-text span {
+
+.lecture-text-sub-title {
   color: var(--special-color);
   font-weight: 550;
   font-size: 1.4rem;
+  margin-top: 1rem;
 }
 
 .lecture-image {
   width: clamp(20rem, 40vw, 25rem);
-  height: clamp(20rem, 20vw, 22rem);
+  height: clamp(21rem, 20vw, 25rem);
   border-radius: 20px;
-  border: 2px solid rgba(208, 235, 255, 0.9);
+  border: 2px solid rgba(212, 228, 240, 0.9);
 }
 
 @media (max-width: 770px) {
@@ -61,6 +63,7 @@
   }
   .lecture-text {
     align-items: center;
+    text-align: center;
   }
   .lecture-text h5 {
     text-align: center;

@@ -12,7 +12,6 @@ import { Treatment } from "./pages/Treatment/Treatment";
 import { useRef } from "react";
 
 function App() {
-  document.title = "פסיכולוג שחר ברורמן ";
   const homeRef = useRef(null);
   const lectureRef = useRef(null);
   const exprienceRef = useRef(null);
@@ -29,9 +28,7 @@ function App() {
     <div className="app" ref={homeRef}>
       <Toaster />
       <Navbar refList={refList} />
-      {/* <div className="home-and-treatment"> */}
       <Home refList={refList} />
-      {/* </div> */}
       <div>
         <Treatment />
         <div className="lecture-and-experties" ref={lectureRef}>
@@ -49,13 +46,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/treatment" element={<Treatment />} />
-  <Route path="/about" element={<About />} />
-  <Route path="/contact" element={<Contact />} />
-  <Route path="*" element={<NotFound />} />
-</Routes> */
-}

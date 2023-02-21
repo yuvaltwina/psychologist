@@ -15,25 +15,25 @@
 }
 
 .card-content {
-  padding: 20px;
-  flex: 1;
+  padding: 20px 30px 30px 30px;
   display: flex;
   flex-direction: column;
 }
 
 .card-title {
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-size: 24px;
+  font-size: 36px;
   align-self: center;
   color: var(--special-color);
 }
 
 .card-text {
   margin: 0;
-  font-size: 25px;
-  line-height: 1.5;
-  flex: 1;
+  margin: 15px 0 20px 0;
+  line-height: 1.7;
+  font-weight: 549;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 .card-link {

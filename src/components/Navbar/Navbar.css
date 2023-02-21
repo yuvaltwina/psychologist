@@ -68,6 +68,7 @@
   right: 1rem;
   bottom: 4rem;
   background: none;
+  z-index: 1000;
   border: none;
   font-size: 2rem;
   color: #5193fb;

@@ -79,6 +79,7 @@
   gap: 1rem;
   background-color: white;
   height: 650px;
+  min-width: 380px;
   padding: 20px 50px;
 }
 .contact-form p {
@@ -160,8 +161,18 @@
   border: 2px solid #293560;
 }
 
-.contact-text-input {
-  box-shadow: none;
+#my-form .contact-text-input {
+  border-color: #c4c4c4;
+}
+#my-form .contact-text-input:hover {
+  border: 1px solid black;
+}
+
+#my-form .text-input-error {
+  border-color: red;
+}
+#my-form .text-input-error:hover {
+  border-color: red;
 }
 
 .contact-submit {
@@ -203,6 +214,8 @@
 @media (max-width: 770px) {
   .contact-form {
     align-items: center;
+    min-width: 338px;
+    padding: 20px 35px;
   }
   .all-inputs-continer {
     align-items: center;

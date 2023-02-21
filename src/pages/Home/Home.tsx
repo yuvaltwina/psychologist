@@ -1,11 +1,8 @@
 import "../Home/Style/Home.css";
 
 import React, { FC } from "react";
-
-import { Navbar } from "../../components/Navbar/Navbar";
 import profile from "../../utils/assets/profile.jpg";
 import { WHATSAPPLINK, FACEBOOKLINK } from "../../utils/data/constVariables";
-
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
 

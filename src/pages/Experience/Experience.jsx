@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import "../Experience/Style/Experience.css";
 import { Card } from "../../components/Card/Card";
+
 const experienceList = [
   {
     pargrah:

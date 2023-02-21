@@ -24,12 +24,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // border: red 1px solid;
-  // width: clamp(8rem, 23vw, 16rem);
-  // border: 1px solid red;
+  min-width: 10rem;
 
   h6 {
-    font-size: 1.45rem;
+    font-size: 1.4rem;
     color: $text-color;
     font-weight: 700;
     margin-top: 2.2rem;
@@ -40,7 +38,7 @@
   width: clamp(9.2rem, 11vw, 14rem);
   border-radius: 300px;
   aspect-ratio: 1/1;
-  border: 2px solid rgba(208, 235, 255, 0.9);
+  border: 2px solid rhgvar(--special-color);
 }
 
 @media (max-width: 1400px) {
@@ -49,12 +47,19 @@
     flex-wrap: wrap;
   }
 }
-@media (max-width: 770) {
+@media (max-width: 770px) {
+  .expertie-image {
+    width: clamp(8.5rem, 11vw, 14rem);
+    border-radius: 300px;
+    aspect-ratio: 1/1;
+    border: 2px solid rhgvar(--special-color);
+  }
+
   .expertie {
-    width: clamp(8rem, 25vw, 15rem);
+    min-width: 36%;
 
     h6 {
-      font-size: 15px;
+      font-size: 1.1rem;
       margin-top: 2rem;
     }
   }

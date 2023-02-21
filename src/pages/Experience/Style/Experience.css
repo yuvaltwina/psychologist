@@ -4,7 +4,7 @@
   align-items: center;
   padding: 90px 0 294px 0;
   background-image: url("../../../utils/assets/bookstwo.png");
-  box-shadow: inset 0 0 0 1000px rgba(238, 237, 231, 0.729);
+  box-shadow: inset 0 0 0 1000px rgba(238, 237, 231, 0.88);
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -15,7 +15,7 @@
   direction: rtl;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   text-align: right;
 }
 .experience-text-container h1 {
