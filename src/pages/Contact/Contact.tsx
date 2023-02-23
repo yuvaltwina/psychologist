@@ -213,7 +213,11 @@ export const Contact = () => {
               />
               {inputErrorMessage(MESSAGE)}
             </div>
-            <button className="contact-submit" type="submit">
+            <button
+              className="contact-submit"
+              type="submit"
+              disabled={formik.isSubmitting}
+            >
               שליחת הודעה
             </button>
           </div>

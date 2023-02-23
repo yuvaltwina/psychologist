@@ -17,24 +17,26 @@ function App() {
   const exprienceRef = useRef(null);
   const contactRef = useRef(null);
   const navbarRef = useRef(null);
+  const treatmentRef = useRef(null);
   const refList = {
     home: homeRef,
     lecture: lectureRef,
     exprience: exprienceRef,
     contact: contactRef,
     navbar: navbarRef,
+    treatment: treatmentRef,
   };
+
   return (
     <div className="app" ref={homeRef}>
       <Toaster />
       <Navbar refList={refList} />
       <Home refList={refList} />
-      <div>
-        <Treatment />
-        <div className="lecture-and-experties" ref={lectureRef}>
-          <Lecture />
-          <Experties />
-        </div>
+      <div ref={treatmentRef}></div>
+      <Treatment />
+      <div className="lecture-and-experties" ref={lectureRef}>
+        <Lecture />
+        <Experties />
       </div>
       <div ref={exprienceRef}></div>
       <Experience />

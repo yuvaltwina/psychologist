@@ -30,7 +30,7 @@
   list-style: none;
   width: 85vw;
   gap: 3rem;
-  justify-content: center;
+  justify-content: space-around;
   padding: 0;
   flex-wrap: wrap;
 }
@@ -43,15 +43,6 @@
   .experience-list {
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
-  }
-  .exprience-list-item {
-    width: clamp(21.5rem, 60vw, 25rem);
-    padding: 20px 20px;
-  }
-}
-@media (max-width: 900px) {
-  .experience-list {
-    gap: 2rem;
+    gap: 2.5rem;
   }
 }/*# sourceMappingURL=Experience.css.map */

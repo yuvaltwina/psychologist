@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: clamp(19rem, 40vw, 27rem);
+  width: clamp(19rem, 39vw, 27rem);
   background-color: #ffffff;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease-in-out;
@@ -42,4 +42,10 @@
   font-weight: bold;
   font-size: 18px;
   margin-top: 20px;
+}
+
+@media (max-width: 770px) {
+  .card {
+    width: 80vw;
+  }
 }/*# sourceMappingURL=Card.css.map */

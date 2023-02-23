@@ -29,14 +29,13 @@
 .lecture-text h3 {
   margin-top: 1rem;
   margin-bottom: 0.9rem;
-  font-size: 21px;
+  font-size: 22px;
 }
 .lecture-text p {
   margin: 20px 0;
   line-height: 2;
   font-weight: 549;
   font-size: 1.25rem;
-  letter-spacing: 1px;
 }
 
 .lecture-text-sub-title {
@@ -65,8 +64,8 @@
     align-items: center;
     text-align: center;
   }
-  .lecture-text h5 {
-    text-align: center;
+  .lecture-text h3 {
+    margin-bottom: 2rem;
   }
   .lecture-text p {
     line-height: 1.7;

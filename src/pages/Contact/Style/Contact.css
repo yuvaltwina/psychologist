@@ -215,6 +215,7 @@
   .contact-form {
     align-items: center;
     min-width: 338px;
+    width: 85vw;
     padding: 20px 35px;
   }
   .all-inputs-continer {
