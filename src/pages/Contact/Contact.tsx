@@ -42,7 +42,7 @@ const CONTACT_INFO_ITEMS_LIST = [
   {
     icon: <GiEarthAmerica className="contact-info-item-icon" />,
     header: ":אתר",
-    pargraph: "shahar.vercel.com",
+    pargraph: "shaharbraverman.com",
   },
 ];
 
